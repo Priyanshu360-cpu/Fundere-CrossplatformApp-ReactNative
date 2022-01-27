@@ -6,13 +6,14 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { Component }  from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
+  TouchableOpacity,
   Text,
   useColorScheme,
   View,
@@ -29,7 +30,7 @@ const bgimg = ({title}): Node=> {
   return(
     <View style={styles.sectionContainer}>
     <Text>
-       Heyo 
+       Heyo
        {title}</Text>
        </View>
   )
@@ -67,45 +68,36 @@ const Section = ({children, title}): Node => {
   );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+class App extends Component {
+  state = {
+    count: 0
+  }
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  onPress = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
 
-  return (
-
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-           <Greeting name='Priyanshu' />
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+ render() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+         style={styles.button}
+         onPress={this.onPress}
+        >
+         <Text>Click me</Text>
+        </TouchableOpacity>
+        <View>
+          <Text>
+            You clicked { this.state.count } times
+          </Text>
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+      </View>
+    )
+  }
+}
+
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -124,6 +116,17 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  button: {
+      alignItems: 'center',
+      backgroundColor: '#DDDDDD',
+      padding: 10,
+      marginBottom: 10
+    },
 });
 
 export default App;
