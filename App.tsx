@@ -17,8 +17,9 @@ import {
   Text,
   useColorScheme,
   View,
-} from 'react-native';
 
+} from 'react-native';
+import { WebView } from 'react-native-webview';
 import {
   Colors,
   DebugInstructions,
@@ -82,6 +83,7 @@ class App extends Component {
  render() {
     return (
       <View style={styles.container}>
+
         <TouchableOpacity
          style={styles.button}
          onPress={this.onPress}
@@ -91,9 +93,11 @@ class App extends Component {
         <View>
           <Text>
             You clicked { this.state.count } times
+
           </Text>
         </View>
       </View>
+
     )
   }
 }
