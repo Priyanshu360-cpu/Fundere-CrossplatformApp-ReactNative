@@ -25,7 +25,22 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+const bgimg = ({title}): Node=> {
+  return(
+    <View style={styles.sectionContainer}>
+    <Text>
+       Heyo 
+       {title}</Text>
+       </View>
+  )
+}
+const Greeting = (props) => {
+  return (
+    <View style={styles.center}>
+      <Text>Hello {props.name}!</Text>
+    </View>
+  );
+}
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -60,6 +75,7 @@ const App: () => Node = () => {
   };
 
   return (
+
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
@@ -70,6 +86,7 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+           <Greeting name='Priyanshu' />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
