@@ -17,16 +17,12 @@ import {
   Text,
   useColorScheme,
   View,
+  ImageBackground,
 
 } from 'react-native';
 import { WebView } from 'react-native-webview';
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+
+const image = { uri: "https://cdn.discordapp.com/avatars/619474506381000706/ea9046cae5081106339cb15e5f150c52.png?size=4096" };
 const bgimg = ({title}): Node=> {
   return(
     <View style={styles.sectionContainer}>
@@ -83,7 +79,7 @@ class App extends Component {
  render() {
     return (
       <View style={styles.container}>
-
+ <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <TouchableOpacity
          style={styles.button}
          onPress={this.onPress}
@@ -95,7 +91,9 @@ class App extends Component {
             You clicked { this.state.count } times
 
           </Text>
+
         </View>
+        </ImageBackground>
       </View>
 
     )
@@ -105,8 +103,8 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+     flex: 1,
+
   },
   sectionTitle: {
     fontSize: 24,
@@ -125,12 +123,17 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
     },
+    image: {
+        flex: 1,
+        justifyContent: "center"
+      },
   button: {
       alignItems: 'center',
       backgroundColor: '#DDDDDD',
       padding: 10,
       marginBottom: 10
     },
+
 });
 
 export default App;
