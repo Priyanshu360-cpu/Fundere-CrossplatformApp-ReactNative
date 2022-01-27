@@ -104,7 +104,8 @@ class App extends Component {
 const styles = StyleSheet.create({
   sectionContainer: {
      flex: 1,
-
+justifyContent: 'center',
+      alignItems: 'center',
   },
   sectionTitle: {
     fontSize: 24,
