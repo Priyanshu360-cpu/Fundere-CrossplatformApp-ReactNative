@@ -9,6 +9,7 @@
 import React, { Component }  from 'react';
 import type {Node} from 'react';
 import styles from './styles';
+import Placeholder from './holders'
 import {
   SafeAreaView,
   ScrollView,
@@ -60,17 +61,7 @@ return(<UselessTextInput
                       />)
 
 }
-const Placeholder = ()=>{
-const [value, onChangeText] = React.useState('Type your Username');
-return(<UselessTextInput
-                        singleline
-                        numberOfLines={1}
-                        onChangeText={text => onChangeText(text)}
-                        value={value}
-                        style={styles.nametag}
-                      />)
 
-}
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
