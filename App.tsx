@@ -52,8 +52,8 @@ const UselessTextInput = (props) => {
 const Password = ()=>{
 const [value, onChangeText] = React.useState('Type your Password');
 return(<UselessTextInput
-                        multiline
-                        numberOfLines={4}
+                        singleline
+                        numberOfLines={1}
                         onChangeText={text => onChangeText(text)}
                         value={value}
                         style={styles.nametag}
@@ -63,8 +63,8 @@ return(<UselessTextInput
 const Placeholder = ()=>{
 const [value, onChangeText] = React.useState('Type your Username');
 return(<UselessTextInput
-                        multiline
-                        numberOfLines={4}
+                        singleline
+                        numberOfLines={1}
                         onChangeText={text => onChangeText(text)}
                         value={value}
                         style={styles.nametag}
