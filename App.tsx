@@ -51,7 +51,7 @@ const UselessTextInput = (props) => {
   );
 }
 const Placeholder = ()=>{
-const [value, onChangeText] = React.useState('Useless Multiline Placeholder');
+const [value, onChangeText] = React.useState('Type your Username');
 return(<UselessTextInput
                         multiline
                         numberOfLines={4}
