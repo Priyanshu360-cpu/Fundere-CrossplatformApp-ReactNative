@@ -56,7 +56,7 @@ return(<UselessTextInput
                         numberOfLines={4}
                         onChangeText={text => onChangeText(text)}
                         value={value}
-                        style={{padding: 10}}
+                        style={styles.nametag}
                       />)
 
 }
@@ -156,6 +156,10 @@ justifyContent: 'center',
       backgroundColor: '#DDDDDD',
       padding: 10,
       marginBottom: 10
+    },
+    nametag: {
+    backgroundColor:'#fcfcfc',
+    padding: -23
     },
 
 });
