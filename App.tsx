@@ -13,7 +13,6 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
   TouchableOpacity,
   Text,
   useColorScheme,
