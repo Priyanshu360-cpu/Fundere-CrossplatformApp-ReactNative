@@ -18,6 +18,7 @@ import {
   useColorScheme,
   View,
   ImageBackground,
+  TextInput,
 
 } from 'react-native';
 import { WebView } from 'react-native-webview';
@@ -38,6 +39,26 @@ const Greeting = (props) => {
       <Text>Hello {props.name}!</Text>
     </View>
   );
+}
+const UselessTextInput = (props) => {
+  return (
+    <TextInput
+      {...props}
+      editable
+      maxLength={40}
+    />
+  );
+}
+const Placeholder = ()=>{
+const [value, onChangeText] = React.useState('Useless Multiline Placeholder');
+return(<UselessTextInput
+                        multiline
+                        numberOfLines={4}
+                        onChangeText={text => onChangeText(text)}
+                        value={value}
+                        style={{padding: 10}}
+                      />)
+
 }
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -70,6 +91,7 @@ class App extends Component {
     count: 0
   }
 
+
   onPress = () => {
     this.setState({
       count: this.state.count + 1
@@ -80,10 +102,12 @@ class App extends Component {
     return (
       <View style={styles.container}>
  <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+<Placeholder></Placeholder>
         <TouchableOpacity
          style={styles.button}
          onPress={this.onPress}
         >
+
          <Text>Click me</Text>
         </TouchableOpacity>
         <View>
