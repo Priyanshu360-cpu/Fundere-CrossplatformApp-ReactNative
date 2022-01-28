@@ -49,6 +49,17 @@ const UselessTextInput = (props) => {
     />
   );
 }
+const Password = ()=>{
+const [value, onChangeText] = React.useState('Type your Password');
+return(<UselessTextInput
+                        multiline
+                        numberOfLines={4}
+                        onChangeText={text => onChangeText(text)}
+                        value={value}
+                        style={styles.nametag}
+                      />)
+
+}
 const Placeholder = ()=>{
 const [value, onChangeText] = React.useState('Type your Username');
 return(<UselessTextInput
@@ -103,13 +114,19 @@ class App extends Component {
       <View style={styles.container}>
  <ImageBackground source={image} resizeMode="cover" style={styles.image}>
 <Placeholder></Placeholder>
+<Password></Password>
         <TouchableOpacity
          style={styles.button}
          onPress={this.onPress}
         >
-
-         <Text>Click me</Text>
+         <Text>Login</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+                 style={styles.button}
+                 onPress={this.onPress}
+                >
+                 <Text>New? Sign In</Text>
+                </TouchableOpacity>
         <View>
           <Text>
             You clicked { this.state.count } times
