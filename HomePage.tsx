@@ -12,4 +12,13 @@ import {
   TextInput,
 
 } from 'react-native';
-const image = { uri: "https://cdn.discordapp.com/avatars/619474506381000706/ea9046cae5081106339cb15e5f150c52.png?size=4096" };
+const image = { uri: "https://discord.com/channels/701041158876299373/919278462747942932/936890776888156240" };
+class homepage extends Component{
+render() {
+    return (<View>
+                <ImageBackground source={image} resizeMode="cover" style={homestyle.image}></ImageBackground>
+                </View>)
+}
+}
+
+export default homepage;

@@ -1,15 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
 import React, { Component }  from 'react';
 import type {Node} from 'react';
 import styles from './styles';
-import Placeholder from './holders'
+import Placeholder from './holders';
+import homepage from './homepage';
 import {
   SafeAreaView,
   ScrollView,
@@ -99,6 +93,11 @@ class App extends Component {
       count: this.state.count + 1
     })
   }
+  onSign = () => {
+
+      return(
+      <homepage></homepage>)
+  }
 
  render() {
     return (
@@ -114,7 +113,7 @@ class App extends Component {
         </TouchableOpacity>
         <TouchableOpacity
                  style={styles.button}
-                 onPress={this.onPress}
+                 onPress={this.onSign}
                 >
                  <Text>New? Sign In</Text>
                 </TouchableOpacity>
