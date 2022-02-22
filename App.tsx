@@ -20,6 +20,20 @@ import { WebView } from 'react-native-webview';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={App}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 const ProfileScreen = ({ navigation, route }) => {
   return <Text>This is {route.params.name}'s profile</Text>;
 };
@@ -87,7 +101,7 @@ const Section = ({children, title}): Node => {
   );
 };
 
-class App extends Component {
+ class App extends React.Component {
   state = {
     count: 0
   }
@@ -99,7 +113,8 @@ class App extends Component {
     })
   }
   onSign = ({ navigation }) => {
-    this.props.navigation.navigate('Profile', { name: 'Jane' })
+    const { navigate } = this.props.navigation;
+    navigate('Profile', { name: 'Jane' })
   }
 
  render() {
@@ -133,7 +148,6 @@ class App extends Component {
     )
   }
 }
+export default MyStack;
 
 
-
-export default App;
