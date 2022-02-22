@@ -68,8 +68,9 @@ const [value, onChangeText] = React.useState('Type your Password');
 return(<UselessTextInput
                         singleline
                         numberOfLines={1}
-                        onChangeText={text => onChangeText(text)}
+                        onChangeText={text => {onChangeText(text)}}
                         value={value}
+                        secureTextEntry={true}
                         style={styles.nametag}
                       />)
 
