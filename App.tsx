@@ -3,7 +3,7 @@ import React, { Component }  from 'react';
 import type {Node} from 'react';
 import styles from './styles';
 import Placeholder from './holders';
-import homepage from './homepage';
+import HomepageScreen from './HomePage';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,7 +17,12 @@ import {
 
 } from 'react-native';
 import { WebView } from 'react-native-webview';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
+const ProfileScreen = ({ navigation, route }) => {
+  return <Text>This is {route.params.name}'s profile</Text>;
+};
 const image = { uri: "https://cdn.discordapp.com/avatars/619474506381000706/ea9046cae5081106339cb15e5f150c52.png?size=4096" };
 const bgimg = ({title}): Node=> {
   return(
@@ -93,10 +98,8 @@ class App extends Component {
       count: this.state.count + 1
     })
   }
-  onSign = () => {
-
-      return(
-      <homepage></homepage>)
+  onSign = ({ navigation }) => {
+    this.props.navigation.navigate('Profile', { name: 'Jane' })
   }
 
  render() {

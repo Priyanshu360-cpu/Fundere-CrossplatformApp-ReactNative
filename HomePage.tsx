@@ -13,12 +13,13 @@ import {
 
 } from 'react-native';
 const image = { uri: "https://discord.com/channels/701041158876299373/919278462747942932/936890776888156240" };
-class homepage extends Component{
+class Homepage extends Component{
 render() {
     return (<View>
+    <Text>Hi</Text>
                 <ImageBackground source={image} resizeMode="cover" style={homestyle.image}></ImageBackground>
                 </View>)
 }
 }
 
-export default homepage;
+export default Homepage;
