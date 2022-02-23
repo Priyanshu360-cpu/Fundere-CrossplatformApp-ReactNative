@@ -14,7 +14,7 @@ import {
   useColorScheme,
   View,
   ImageBackground,
-  TextInput,
+  TextInput
 
 } from 'react-native';
 import Login from './login';
