@@ -17,6 +17,7 @@ import {
   TextInput
 
 } from 'react-native';
+import Realm from "realm";
 import Login from './login';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer } from '@react-navigation/native';
