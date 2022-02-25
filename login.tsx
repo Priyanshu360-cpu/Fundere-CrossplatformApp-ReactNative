@@ -3,7 +3,7 @@ import type {Node} from 'react';
 import styles from './styles';
 import Placeholder from './holders';
 import HomepageScreen from './HomePage';
-
+import Realm from "realm";
 import {
   SafeAreaView,
   ScrollView,
