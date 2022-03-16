@@ -1,5 +1,5 @@
 
-import React, { Component }  from 'react';
+import React, { Component,Animate }  from 'react';
 import type {Node} from 'react';
 import styles from './styles';
 import MainPage from './MainPage';
@@ -32,6 +32,7 @@ const MyStack = () => {
           component={Login}
           options={{ title: 'Welcome' }}
         />
+        <Stack.Screen name = "Welcanimate" component={}/>
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="MainPage" component={MainPage}/>
       </Stack.Navigator>
