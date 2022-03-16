@@ -22,6 +22,7 @@ import Login from './login';
 import { WebView } from 'react-native-webview';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Welcanimate from './Welcanimate';
 const Stack = createNativeStackNavigator();
 const MyStack = () => {
   return (
@@ -29,10 +30,10 @@ const MyStack = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={Login}
+          component={Welcanimate}
           options={{ title: 'Welcome' }}
         />
-        <Stack.Screen name = "Welcanimate" component={}/>
+        <Stack.Screen name = "Welcanimate" component={Welcanimate}/>
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="MainPage" component={MainPage}/>
       </Stack.Navigator>
