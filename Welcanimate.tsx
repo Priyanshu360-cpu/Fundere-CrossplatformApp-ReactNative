@@ -13,8 +13,17 @@ import {
     Animated
   
   } from 'react-native';
+  import {
+    useSharedValue,
+    useAnimatedStyle,
+  } from 'react-native-reanimated';v
   import * as Animatable from "react-native-animatable";
   import styles from './animated';
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      width: 50,
+    };
+  });
 class Welcanimate extends Component{
     componentWillMount = () => {
         this.animatedWidth = new Animated.Value(50)
@@ -33,7 +42,7 @@ class Welcanimate extends Component{
     render(){
         return(
             <TouchableOpacity style = {styles.container} onPress = {this.animatedBox}>
-            <Animated.View style = {[styles.box]}/>
+            <Animated.View style = {[styles.box, animatedStyle]}/>
          </TouchableOpacity>
         )
     }
